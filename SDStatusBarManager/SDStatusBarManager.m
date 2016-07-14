@@ -44,6 +44,9 @@ static NSString * const SDStatusBarManagerTimeStringKey = @"time_string";
 
 - (void)enableOverrides
 {
+  self.timeString = @"13:37";
+  self.carrierName = @"Visiolink";
+  
   self.usingOverrides = YES;
 
   self.overrider.timeString = [self localizedTimeString];

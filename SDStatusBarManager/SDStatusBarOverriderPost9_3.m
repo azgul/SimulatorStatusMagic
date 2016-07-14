@@ -177,14 +177,6 @@ typedef struct {
   // Set 9:41 time in current localization
   overrides->overrideTimeString = 1;
   strcpy(overrides->values.timeString, [self.timeString cStringUsingEncoding:NSUTF8StringEncoding]);
-
-  // Enable 5 bars of mobile (iPhone only)
-  if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-    overrides->booloverrideItemIsEnabled[ItemIsEnabledGsmSignalStrengthShowDots] = 1;
-    overrides->values.boolitemIsEnabled[ItemIsEnabledGsmSignalStrengthShowDots] = 1;
-    overrides->overrideGsmSignalStrengthBars = 1;
-    overrides->values.gsmSignalStrengthBars = 5;
-  }
   
   // Remove carrier text for iPhone, set it to "iPad" for the iPad
   NSString *carrierText = self.carrierName;
